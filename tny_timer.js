@@ -10,11 +10,12 @@
 
 */
 showClock();
+setInterval(showClock(), 1000);
 
 function showClock() {
-    var thisDay = new Date("May 19, 2018 9:31:27 a.m.");
-    var localDate = thisDay.toDateString();
-    var localTime = thisDay.toTimeString();
+    var thisDay = new Date();
+    var localDate = thisDay.toLocaleDateString();
+    var localTime = thisDay.toLocaleTimeString();
     document.getElementById("currentTime").innerHTML = "<span>" + localDate + "</span><span>" + localTime + "</span>";
 
     var j4Date = nextJuly4(thisDay);
